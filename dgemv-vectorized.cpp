@@ -10,8 +10,8 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // insert your code here: implementation of vectorized vector-matrix multiply
    #pragma omp parallel for
    for (int i = 0; i < n; i++) {
-       y[i] = 0.0;  // Initialize the y vector with zeros
-       #pragma omp simd
+    //    y[i] = 0.0;  // Initialize the y vector with zeros
+    //    #pragma omp simd
        for (int j = 0; j < n; j++) {
            y[i] += A[i * n + j] * x[j];  // Matrix-vector multiplication
        }
